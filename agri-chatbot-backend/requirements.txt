@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-dotenv
+ollama
+deep-translator
+langchain-community
+faiss-cpu
+sentence-transformers
