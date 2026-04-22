@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+body {
+  background-color: #f8faf8;
+  color: #1a202c;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Utilities ── */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ── Components ── */
+@layer components {
+  .section-header {
+    @apply text-xl font-bold mb-8 text-gray-800 border-b pb-4 flex items-center;
+  }
+
+  .label {
+    @apply block text-sm font-bold text-gray-800 mb-2 tracking-wide;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 outline-none transition-all duration-200 bg-white font-medium text-gray-900 shadow-sm hover:border-gray-400 placeholder-gray-400;
+  }
+
+  /* Agriculture primary button */
+  .btn-agri-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-green-800 hover:bg-green-700 text-white font-bold text-sm rounded-xl shadow-sm hover:shadow-md transition-all active:scale-95;
+  }
+
+  /* Subtle glass card  */
+  .glass-card {
+    background: rgba(255,255,255,0.80);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  /* Stat badge pill */
+  .agri-pill {
+    @apply text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full border;
+  }
+}
+
+/* ── Scrollbar ── */
+.custom-scrollbar::-webkit-scrollbar       { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background-color: #94a3b8; border-radius: 20px; }
+
+/* ── Google Translate Widget ── */
+#google_translate_element { display: inline-block; line-height: normal; }
+
+.goog-te-gadget {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0 !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 1px 4px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  vertical-align: middle !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget-simple:hover {
+  background-color: #ffffff !important;
+  border-color: #16a34a !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+}
+
+.goog-te-gadget-simple span {
+  color: #374151 !important;
+  font-weight: 700 !important;
+  font-size: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.goog-te-gadget-icon   { display: none !important; }
+.goog-te-gadget span   { display: none; }
+.goog-te-gadget .goog-te-gadget-simple span { display: inline-block; }
+.goog-te-menu-value img { display: none !important; }
+.goog-te-menu-value:after { content: '▾'; margin-left: 1px; font-size: 8px; }
+
+/* Hide translation top bar */
+body { top: 0 !important; }
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+.goog-tooltip         { display: none !important; }
+.goog-text-highlight  { background-color: transparent !important; border: none !important; box-shadow: none !important; }
